@@ -1,7 +1,20 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div id="app" class="app-view">
+    <message />
+    <topbar v-if="!splashScreenDisplayed && !postEditorDisplayed" />
+
+    <section>
+        <router-view />
+    </section>
+
+    <confirm />
+    <alert />
+    <rendering-popup />
+    <regenerate-thumbnails-popup />
+    <error-popup />
+    <sync-popup />
+
+    <img src="../assets/logo.png">
   </div>
 </template>
 

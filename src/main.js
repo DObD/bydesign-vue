@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Flamelink from 'flamelink'
 
-import App from './App'
+import App from './components/App'
 import router from './router'
 
 const app = Flamelink({
