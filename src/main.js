@@ -2,9 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Flamelink from 'flamelink'
+import * as svgicon from 'vue-svgicon'
 
 import App from './components/App'
 import router from './router'
+
+Vue.use(svgicon, {
+  tagName: 'svgicon'
+})
 
 const app = Flamelink({
   apiKey: 'AIzaSyAfAryrFwdxYAhkGLlvPi9Zmw29aNRHVJk',
