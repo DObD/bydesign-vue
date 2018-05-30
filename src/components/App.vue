@@ -5,19 +5,21 @@
     <section>
       <router-view />
     </section>
-
+    <mobilefooter />
   </div>
 </template>
 
 <script>
 import TopBar from './TopBar'
 import About from './About'
+import MobileFooter from './MobileFooter'
 
 export default {
   name: 'App',
   components: {
     'topbar': TopBar,
-    'about': About
+    'about': About,
+    'mobilefooter': MobileFooter
   },
   computed: {
     splashScreenDisplayed: function () {
@@ -36,11 +38,11 @@ export default {
 @import '../scss/global.scss';
 
 #app {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $color-4;
-  margin-top: 60px;
+  // margin-top: 60px;
 }
 </style>

@@ -6,13 +6,13 @@ $color-1: #42a5f5;
 $color-2: #40b771;
 $color-3: #ef5350;
 $color-4: #263238;
-$color-5: #3d464e;
+$color-5: #37474f;
 $color-6: #707277;
 $color-7: #8e929d;
 $color-8: #cbcdd4;
 $color-9: #f8f9fa;
 $color-10: #fff;
-$color-11: #673ab7;
+$color-11: #673ab7; // 103, 58, 183
 
 $color-helper-1: #FFD54F;
 $color-helper-2: #5765A2;
@@ -56,8 +56,8 @@ $logo-colors: (
 /*
  * fonts
  */
-$primary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$secondary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$primary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$secondary-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 /*
  * Dimensions

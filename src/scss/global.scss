@@ -185,11 +185,11 @@ form p {
     color: inherit;
     vertical-align: middle;
     fill: none;
-    stroke: $color-11;
+    // stroke: $color-11;
 }
 
 .svg-fill {
-    fill: $color-11;
+    fill: map-get($logo-colors , 'color5');
     stroke: none;
 }
 
@@ -211,5 +211,5 @@ form p {
 }
 
 .svg-drop-shadow {
-    filter: drop-shadow(3px 8px 7px rgba(52, 143, 214, 0.25));
+    filter: drop-shadow(0px 10px 13px map-get($logo-colors, 'bg6'));
 }
