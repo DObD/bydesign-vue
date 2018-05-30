@@ -7,6 +7,11 @@ import * as svgicon from 'vue-svgicon'
 import App from './components/App'
 import router from './router'
 
+import fontawesome from '@fortawesome/fontawesome'
+import brands from '@fortawesome/fontawesome-free-brands'
+
+fontawesome.library.add(brands)
+
 Vue.use(svgicon, {
   tagName: 'svgicon'
 })
