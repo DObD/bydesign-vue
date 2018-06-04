@@ -7,14 +7,18 @@
             <topbar-preview-link v-if="displayIcon" />
             <topbar-notification />
             <topbar-dropdown /> -->
+            <navigation />
         </div>
     </div>
 </template>
 
 <script>
-
+import Navigation from '@/components/Navigation'
 export default {
-  name: 'topbar'
+  name: 'topbar',
+  components: {
+    navigation: Navigation
+  }
 }
 </script>
 
@@ -24,7 +28,7 @@ export default {
 .topbar {
     background: $color-9;
     font-size: 1.6rem;
-    height: 8.4rem;
+    // height: 8.4rem;
     position: absolute;
     top: 0;
     -webkit-app-region: no-drag;
@@ -45,9 +49,9 @@ export default {
 
     &-logo {
         display: block;
-        height: 4.2rem;
+        height: 4rem;
         margin-right: auto;
-        width: 4.2rem;
+        width: 4rem;
         padding-top: .5rem;
         padding-bottom: .5rem;
     }
