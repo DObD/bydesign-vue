@@ -1,7 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import Flamelink from 'flamelink'
 import * as svgicon from 'vue-svgicon'
 
 import App from './components/App'
@@ -10,26 +9,36 @@ import router from './router'
 import fontawesome from '@fortawesome/fontawesome'
 import brands from '@fortawesome/fontawesome-free-brands'
 
+import VueFire from 'vuefire'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
 fontawesome.library.add(brands)
 
+Vue.use(VueFire)
 Vue.use(svgicon, {
   tagName: 'svgicon'
 })
 
-const app = Flamelink({
-  apiKey: 'AIzaSyAfAryrFwdxYAhkGLlvPi9Zmw29aNRHVJk',
-  authDomain: 'darren-by-design.firebaseapp.com',
-  databaseURL: 'https://darren-by-design.firebaseio.com',
+firebase.initializeApp({
   projectId: 'darren-by-design',
   storageBucket: 'darren-by-design.appspot.com',
-  messagingSenderId: '198481969014'
+  databaseURL: 'https://darren-by-design.firebaseio.com'
 })
 
-app.content.get('posts')
-  .then(posts => console.log('All posts: ', posts))
-  .catch(error => console.log('Something gone wrong', error))
+export const db = firebase.firestore()
+const settings = {timestampsInSnapshots: true}
+db.settings(settings)
 
 Vue.config.productionTip = false
+
+export let title = ''
+export let pathSlug = location.pathname.split('/')[2]
+router.beforeEach((to, from, next) => {
+  document.title = `${to.name} - Darren by Design`
+  title = `${to.name}`
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({

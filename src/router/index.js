@@ -2,10 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Writings from '@/components/Writings'
+import Writ from '@/components/Writ'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -19,8 +21,13 @@ export default new Router({
     },
     {
       path: '/writings',
-      name: 'Writings',
+      name: 'Random Ramblings',
       component: Writings
+    },
+    {
+      path: '/writ/:slug',
+      name: 'Writ',
+      component: Writ
     }
   ]
 })

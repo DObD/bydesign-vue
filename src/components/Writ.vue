@@ -1,36 +1,34 @@
 <template>
-  <div class="writings">
-    <article v-for="(post, idx) in posts" :key="idx" class="post-card">
-      <a :href="'/writ/'+post.slug" class="post-card-image-link"><img :src="post.feature_image" class="post-card-image"/></a>
-      <div class="post-card-content">
-        <a :href="'/writ/'+post.slug" class="post-card-content-link">
-          <header><h3>{{ post.title }}</h3></header>
-          <div>{{ post.summary }}</div>
-          <footer>{{ post.tag }}</footer>
-        </a>
+  <div class="writ">
+    <article v-for="(post, idx) in posts" :key="idx">
+      <div class="writ-content">
+          <header>
+            <img :src="post.feature_image" class="writ-image"/>
+            <h1>{{ post.title }}</h1>
+            <div>{{ post.tag }}</div>
+          </header>
+          <div v-html="post.content" class="content"></div>
+          <footer></footer>
       </div>
     </article>
   </div>
 </template>
 
 <script>
-import { db } from '@/main'
+import { db, pathSlug } from '@/main'
+// export let postTitle = posts.title
 
 export default {
-  name: 'Writings',
+  name: 'Writ',
   data () {
     return {
       posts: [],
-      title: '',
-      tag: '',
-      feature_image: '',
-      slug: '',
-      msg: 'Random Ramblings'
+      slug: pathSlug
     }
   },
   firestore () {
     return {
-      posts: db.collection('posts').orderBy('date', 'desc')
+      posts: db.collection('posts').where('slug', '==', pathSlug)
     }
   }
 }
@@ -42,14 +40,45 @@ export default {
 h1 {
   display: block;
 }
-.writings {
-  margin-top: 5rem;
-  margin-left: auto;
-  margin-right: auto;
+.writ {
+  // margin-top: 5rem;
+  // margin-left: auto;
+  // margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1040px;
+  // max-width: 1040px;
   width: 100%;
+}
+.writ-image {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  max-height: 600px;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.writ-content {
+  color: #fff;
+  h1 {
+    color: #fff;
+  }
+  header {
+    max-height: 600px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+  }
+  .content {
+    color: #000;
+  }
 }
 ul {
   list-style-type: none;
@@ -141,10 +170,5 @@ a {
 
 .post-card-image {
   position: relative;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
 }
 </style>

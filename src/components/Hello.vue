@@ -2,9 +2,9 @@
   <div class="hello">
     <div>
       <ul class="menu">
-        <!-- <li>
-          <a>Blog</a>
-        </li> -->
+        <li>
+          <router-link to="/writings">Writings</router-link>
+        </li>
         <li>
           <a>Work</a>
         </li>
@@ -15,7 +15,7 @@
     <div class="card yellow">
       <article>
         <h3>Strategy</h3>
-        <p>Every single project worked on begins with a thorough, often intense planning process. I involve key in-house experts and decision makers as needed to ensure that your plan is sound and successful.</p>
+        <p>Every single project worked on begins with a thorough, often intense planning process. I involve key decision makers to ensure that your plan is sound and successful.</p>
       </article>
     </div>
     <!-- <div class="card green">
@@ -25,7 +25,7 @@
     <div class="card peri">
       <article>
         <h3>Branding</h3>
-        <p>People always have the sweetest things to say to you. Have you ever wondered what they say when you aren't there? This is your brand. Make sure that what they say to others about you is accurate and how you want to be seen.</p>
+        <p>People always have the sweetest things to say to you. Have you ever wondered what they say when you aren't there? This is your brand. Make sure that what they say to others is how you want to be seen.</p>
       </article>
     </div>
     <div class="card green">
@@ -80,6 +80,9 @@ a {
 .hello svg.svg-icon {
   margin: 0 auto;
 }
+.svg-drop-shadow {
+    filter: drop-shadow(0px 10px 13px map-get($logo-colors, 'bg8'));
+}
 .card {
   position: relative;
 }
@@ -87,7 +90,9 @@ a {
   position: absolute;
   text-align: left;
   bottom: 4rem;
-  padding: 0 1rem;
+  max-width: 550px;
+  padding: 1rem 2rem;
+  background-color: rgba(255,255,255,.8);
 }
 .yellow {
   background-color: map-get($logo-colors, 'bg5')
