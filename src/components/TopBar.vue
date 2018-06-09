@@ -2,7 +2,7 @@
     <div class="topbar">
 
         <div class="topbar-inner">
-            <img src="../assets/logo/dd-face-round.svg" class="topbar-logo" alt="Logo">
+            <img src="../assets/logo/dd-face-dbd-dk.svg" class="topbar-logo" alt="Logo">
             <!-- <topbar-sites v-if="displayIcon" />
             <topbar-preview-link v-if="displayIcon" />
             <topbar-notification />
@@ -51,7 +51,7 @@ export default {
         display: block;
         height: 4rem;
         margin-right: auto;
-        width: 4rem;
+        // width: 4rem;
         padding-top: .5rem;
         padding-bottom: .5rem;
     }

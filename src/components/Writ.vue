@@ -41,13 +41,12 @@ h1 {
   display: block;
 }
 .writ {
-  // margin-top: 5rem;
-  // margin-left: auto;
-  // margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  // max-width: 1040px;
-  width: 100%;
+  flex-flow: column;
+  width: 100vw;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 .writ-image {
   display: block;
@@ -63,6 +62,7 @@ h1 {
   right: 0;
   z-index: -1;
 }
+
 .writ-content {
   color: #fff;
   h1 {
@@ -78,7 +78,25 @@ h1 {
   }
   .content {
     color: #000;
+    max-width: 700px;
+    width: 100%;
+    text-align: left;
+    margin: 2rem auto 2rem;
+    position: relative;
+    object-fit: contain;
+    overflow: hidden;
+
   }
+}
+.writ-content .content > p {
+  width: 100%;
+  display: block;
+}
+.writ-content .content > p > img {
+    max-width: 700px;
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
 }
 ul {
   list-style-type: none;

@@ -2,7 +2,6 @@
   <ul>
     <router-link to="/"><li>Home</li></router-link>
     <router-link to="/writings"><li>Writings</li></router-link>
-    <li>About</li>
   </ul>
 </template>
 
@@ -18,6 +17,9 @@ ul {
   margin: 0;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 795px) {
+    display: none;
+  }
 }
 li {
   display: inline-block;

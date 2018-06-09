@@ -5,9 +5,9 @@
         <li>
           <router-link to="/writings">Writings</router-link>
         </li>
-        <li>
+        <!-- <li>
           <a>Work</a>
-        </li>
+        </li> -->
       </ul>
       <svgicon name='dd-r-out' width='200' height='200' class="svg-drop-shadow" ></svgicon>
       <h1>{{ msg }}</h1>

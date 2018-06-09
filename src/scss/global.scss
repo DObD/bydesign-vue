@@ -180,6 +180,22 @@ form p {
     background: transparent;
 }
 
+.site-main {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    flex-flow: column;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+.outer {
+    position: relative;
+    padding: 0 4vw;
+}
+
 .svg-icon {
     display: inline-block;
     width: 16px;

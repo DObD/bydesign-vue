@@ -46,7 +46,7 @@ export default {
     justify-content: center;
     align-items: end;
     box-shadow: 0 5px 15px 0 rgba(0,0,0,.37);
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 795px) {
       display: none;
     }
   }

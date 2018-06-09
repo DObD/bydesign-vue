@@ -1,16 +1,21 @@
 <template>
-  <div class="writings">
-    <article v-for="(post, idx) in posts" :key="idx" class="post-card">
-      <a :href="'/writ/'+post.slug" class="post-card-image-link"><img :src="post.feature_image" class="post-card-image"/></a>
-      <div class="post-card-content">
-        <a :href="'/writ/'+post.slug" class="post-card-content-link">
-          <header><h3>{{ post.title }}</h3></header>
-          <div>{{ post.summary }}</div>
-          <footer>{{ post.tag }}</footer>
-        </a>
-      </div>
-    </article>
-  </div>
+  <main class="site-main outer">
+    <div class="inner">
+      <article v-for="(post, idx) in posts" :key="idx" class="post-card">
+        <a :href="'/writ/'+post.slug" class="post-card-image-link"><img :src="post.feature_image" class="post-card-image"/></a>
+        <div class="post-card-content">
+          <a :href="'/writ/'+post.slug" class="post-card-content-link">
+            <header>
+              <div class="tag">{{ post.tag }}</div>
+              <h3>{{ post.title }}</h3>
+            </header>
+            <div>{{ post.summary }}</div>
+            <footer>{{ post.date }}</footer>
+          </a>
+        </div>
+      </article>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -38,18 +43,15 @@ export default {
 
 <style lang="scss" scoped>
 @import '../scss/variables';
+@import '../scss/global';
 
-h1 {
-  display: block;
-}
-.writings {
-  margin-top: 5rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
+.inner {
+  margin: 0 auto;
   max-width: 1040px;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 8vw;
 }
 ul {
   list-style-type: none;
@@ -62,7 +64,19 @@ li {
 a {
   color: $color-5;
 }
-
+header {
+  padding: 1rem 0;
+}
+footer {
+  font-size: .9rem;
+}
+.tag {
+  font-size: .9rem;
+  font-variant: small-caps;
+}
+h3 {
+  margin: 0;
+}
 @media (min-width: 795px) {
   .post-card:nth-child(6n+1):not(.no-image) {
     flex: 1 1 100%;

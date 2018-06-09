@@ -33,7 +33,11 @@ db.settings(settings)
 Vue.config.productionTip = false
 
 export let title = ''
-export let pathSlug = location.pathname.split('/')[2]
+export let pathSlug = ''
+if (location.pathname.split('/')[1] === 'writ') {
+  pathSlug = location.pathname.split('/')[2]
+}
+
 router.beforeEach((to, from, next) => {
   document.title = `${to.name} - Darren by Design`
   title = `${to.name}`

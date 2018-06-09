@@ -2,9 +2,9 @@
   <div id="app" class="app-view">
     <topbar v-if="!splashScreenDisplayed" />
     <hero v-if="!splashScreenDisplayed && !writScreenDisplayed" />
-    <section>
+    <div class="site-wraper">
       <router-view />
-    </section>
+    </div>
     <mobilefooter />
   </div>
 </template>
@@ -50,7 +50,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $color-4;
-  padding-top: 4.25rem;
-  // margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 </style>
